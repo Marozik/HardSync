@@ -654,26 +654,13 @@ textarea.input {
   height: 100%;
   width: 100%;
   z-index: -1;
+  -webkit-filter: grayscale(50%) brightness(0.5);
+          filter: grayscale(50%) brightness(0.5);
 }
 
 .intro__background-ibg img {
   -o-object-position: top;
      object-position: top;
-}
-
-.intro__background-ibg::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: -o-linear-gradient(160deg, rgba(19, 4, 21, 0.8), rgba(49, 35, 23, 0.6), rgba(18, 18, 41, 0.6), rgba(39, 39, 41, 0.8));
-  background: linear-gradient(-70deg, rgba(19, 4, 21, 0.8), rgba(49, 35, 23, 0.6), rgba(18, 18, 41, 0.6), rgba(39, 39, 41, 0.8));
-  background-size: 500% 500%;
-  -webkit-animation: gradient 10s ease-out infinite;
-          animation: gradient 10s ease-out infinite;
 }
 
 .intro__background-ibg::after {
@@ -687,34 +674,6 @@ textarea.input {
   background: -webkit-gradient(linear, left bottom, left top, from(rgb(0, 0, 0)), to(rgba(254, 221, 209, 0)));
   background: -o-linear-gradient(bottom, rgb(0, 0, 0), rgba(254, 221, 209, 0) 100%);
   background: linear-gradient(0deg, rgb(0, 0, 0), rgba(254, 221, 209, 0) 100%);
-}
-
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .decor-intro {
@@ -1148,6 +1107,14 @@ textarea.input {
   z-index: 2;
 }
 
+.about__title-small {
+  text-align: center;
+}
+
+.about__title-small:not(:last-child) {
+  margin-bottom: 3.75rem;
+}
+
 .about__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1229,7 +1196,7 @@ textarea.input {
 
 .decor-about__item {
   position: absolute;
-  top: 10%;
+  top: 13%;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);
@@ -3188,10 +3155,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding-bottom: 5rem;
   }
 
-  .about__title-small:not(:last-child) {
-    margin-bottom: 3.75rem;
-  }
-
   .visual-about {
     gap: 2.5rem;
   }
@@ -3324,10 +3287,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
   .about {
     padding-bottom: 1.875rem;
-  }
-
-  .about__title-small:not(:last-child) {
-    margin-bottom: 1.875rem;
   }
 
   .visual-about {
@@ -3563,6 +3522,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     position: absolute;
   }
 
+  .about__title-small:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
+
   .about__body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
@@ -3586,6 +3549,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -ms-flex-item-align: stretch;
         -ms-grid-row-align: stretch;
         align-self: stretch;
+    text-align: center;
   }
 
   .item-aulbum-slide__image-ibg {
@@ -3696,18 +3660,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (max-width: 29.99875em) {
-  .about__title-small {
-    text-align: center;
-  }
-
   .about__button {
     -ms-flex-item-align: stretch;
         -ms-grid-row-align: stretch;
         align-self: stretch;
-  }
-
-  .albums__title-small {
-    text-align: center;
   }
 
   .albums__button {
@@ -3852,18 +3808,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 @supports not (padding-bottom: clamp( 1.875rem , 0.8111702128rem  +  5.3191489362vw , 5rem )) {
     .about {
       padding-bottom: calc(1.875rem + 3.125 * (100vw - 20rem) / 58.75);
-    }
-}
-
-@supports (margin-bottom: clamp( 1.875rem , 1.2367021277rem  +  3.1914893617vw , 3.75rem )) {
-    .about__title-small:not(:last-child) {
-      margin-bottom: clamp( 1.875rem , 1.2367021277rem  +  3.1914893617vw , 3.75rem );
-    }
-}
-
-@supports not (margin-bottom: clamp( 1.875rem , 1.2367021277rem  +  3.1914893617vw , 3.75rem )) {
-    .about__title-small:not(:last-child) {
-      margin-bottom: calc(1.875rem + 1.875 * (100vw - 20rem) / 58.75);
     }
 }
 
